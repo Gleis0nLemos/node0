@@ -3,13 +3,16 @@ import { DatabaseMemory } from "./database-memory.js";
 
 const server = fastify();
 
-// POST http://localhost:3333/videos
-// PUT http://localhost:3333/videos/ID
+const database = new DatabaseMemory()
 
-// Route Parameter ex: '3333/videos/:id'
+server.post('/videos', (request, reply) => {
+  database.create({
+    title: 'Vídeo 01',
+    description: 'Esse é o vídeo 01',
+    duration: 180,
+  })
 
-server.post('/videos', () => {
-  return 'Hello World'
+  return reply.status(201).send()
 })
 
 server.get('/videos', () => {
