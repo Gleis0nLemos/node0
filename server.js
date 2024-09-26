@@ -21,7 +21,9 @@ server.post('/videos', (request, reply) => {
 })
 
 server.get('/videos', () => {
-  return 'Hello Rocketseat'
+  const videos =  database.list()
+
+  return videos
 })
 
 server.put('/videos/:id', () => {

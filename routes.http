@@ -6,3 +6,7 @@ Content-Type: application/json
   "description": "Primeiro vídeo",
   "duration": 180
 }
+
+### 
+
+GET http://localhost:3333/videos
