@@ -21,3 +21,6 @@ Content-Type: application/json
   "description": "Primeiro vídeo",
   "duration": 180
 }
+
+### 
+DELETE http://localhost:3333/videos/94005017-4dd5-4928-9cf7-dc6635ef15b5
