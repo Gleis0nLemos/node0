@@ -26,8 +26,17 @@ server.get('/videos', () => {
   return videos
 })
 
-server.put('/videos/:id', () => {
-  return 'Hello Node.js'
+server.put('/videos/:id', (request, reply) => {
+  const videoId = request.params.id
+  const { title, description, duration } = request.body
+
+  database.update(videoId, {
+    title,
+    description,
+    duration,
+  })
+
+  return reply.status(204).send()
 })
 
 server.delete('/videos/:id', () => {
